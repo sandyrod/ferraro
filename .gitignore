@@ -1,0 +1,5 @@
+# created by virtualenv automatically
+__pycache__/
+metalpro/settings/local.py
+apps/*/__pycache__/
+metalpro/__pycache__/
