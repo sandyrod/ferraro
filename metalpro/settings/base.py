@@ -40,7 +40,9 @@ LOCAL_APPS = [
     'apps.tratamiento',
     'apps.insumos',
     'apps.piezas',
-    'apps.planos'
+    'apps.planos',
+    'apps.variables',
+    'apps.instrumentos'
 ]
 
 THIRD_APPS = [

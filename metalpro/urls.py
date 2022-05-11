@@ -32,5 +32,7 @@ urlpatterns = [
     path('tratamiento/', include('apps.tratamiento.api.urls')),
     path('insumo/', include('apps.insumos.api.urls')),
     path('piezas/',include('apps.piezas.api.urls')),
-    path('planos/',include('apps.planos.api.urls'))
+    path('planos/',include('apps.planos.api.urls')),
+    path('variables/', include('apps.variables.api.urls')),
+    path('instrumentos/', include('apps.instrumentos.api.urls'))
 ]
