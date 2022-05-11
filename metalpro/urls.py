@@ -30,5 +30,6 @@ urlpatterns = [
     path('orden/', include('apps.orders.api.urls')),
     path('mantenimiento/', include('apps.mantenimiento.api.urls')),
     path('tratamiento/', include('apps.tratamiento.api.urls')),
-    path('insumo/', include('apps.insumos.api.urls'))
+    path('insumo/', include('apps.insumos.api.urls')),
+    path('piezas/',include('apps.piezas.api.urls'))
 ]
