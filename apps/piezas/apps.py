@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class PiezaConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'pieza'
+    name = 'apps.piezas'

@@ -38,7 +38,8 @@ LOCAL_APPS = [
     'apps.orders',
     'apps.mantenimiento',
     'apps.tratamiento',
-    'apps.insumos'
+    'apps.insumos',
+    'apps.piezas'
 ]
 
 THIRD_APPS = [
