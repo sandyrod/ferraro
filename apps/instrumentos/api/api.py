@@ -6,7 +6,7 @@ from apps.instrumentos.api.serializers import InstrumentoSerializer
 from rest_framework.permissions import IsAuthenticated
 
 class InstrumentoAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
     def get(self, request):
         instrumentos = Instrumento.objects.all()
@@ -21,7 +21,7 @@ class InstrumentoAPIView(APIView):
         return Response(instrumentos_serializer.errors, status=400)
 
 class InstrumentoDetailAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         instrumento = Instrumento.objects.filter(id = pk).first()
         instrumento_serializer = InstrumentoSerializer(instrumento)

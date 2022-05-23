@@ -6,7 +6,7 @@ from apps.planos.api.serializers import PlanoSerializer
 from rest_framework.permissions import IsAuthenticated
 
 class PlanoAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
     def get(self, request):
         planos = Plano.objects.all()
@@ -21,7 +21,7 @@ class PlanoAPIView(APIView):
         return Response(planos_serializer.errors, status=400)
 
 class PlanoDetailAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         plano = Plano.objects.filter(id = pk).first()
         pieza_serializer = PlanoSerializer(plano)

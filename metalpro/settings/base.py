@@ -42,7 +42,8 @@ LOCAL_APPS = [
     'apps.piezas',
     'apps.planos',
     'apps.variables',
-    'apps.instrumentos'
+    'apps.instrumentos',
+    'apps.motivos'
 ]
 
 THIRD_APPS = [

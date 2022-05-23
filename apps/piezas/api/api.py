@@ -6,7 +6,7 @@ from apps.piezas.api.serializers import PiezaSerializer
 from rest_framework.permissions import IsAuthenticated
 
 class PiezaAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
 
     def get(self, request):
         piezas = Pieza.objects.all()
@@ -21,7 +21,7 @@ class PiezaAPIView(APIView):
         return Response(piezas_serializer.errors, status=400)
 
 class PiezaDetailAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         pieza = Pieza.objects.filter(id = pk).first()
         pieza_serializer = PiezaSerializer(pieza)
