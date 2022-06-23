@@ -35,5 +35,6 @@ urlpatterns = [
     path('planos/',include('apps.planos.api.urls')),
     path('variables/', include('apps.variables.api.urls')),
     path('instrumentos/', include('apps.instrumentos.api.urls')),
-    path('motivos/', include('apps.motivos.api.urls'))
+    path('motivos/', include('apps.motivos.api.urls')),
+    path('cotizaciones/', include('apps.cotizaciones.api.urls'))
 ]

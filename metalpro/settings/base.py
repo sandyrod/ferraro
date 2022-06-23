@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-zj2kl9cg-pl6splynmvbbybt6kw*snd6wj5b*_@4#y((^jvdb0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ "*", "164.92.75.196", "localhost", "127.0.0.1" ]
+ALLOWED_HOSTS = [ "*", "164.92.75.196", "localhost", "127.0.0.1", "ferraro.apipython.site" ]
 
 
 # Application definition
@@ -43,7 +43,8 @@ LOCAL_APPS = [
     'apps.planos',
     'apps.variables',
     'apps.instrumentos',
-    'apps.motivos'
+    'apps.motivos',
+    'apps.cotizaciones'
 ]
 
 THIRD_APPS = [
