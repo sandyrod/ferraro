@@ -21,9 +21,12 @@ class CotizacionDetailSerializer(serializers.ModelSerializer):
         model = CotizacionDetail
         fields = '__all__'
 
-class CotizacionesWithDetailsSerializer(serializers.ModelSerializer):
-    detalles = CotizacionDetailSerializer(many=True, source="cotizacion")
+class CotizacionesWithDetailsListadoSerializer(serializers.ModelSerializer):
+    cotizacion = CotizacionDetailSerializer(many=True)
 
     class Meta:
         model = Cotizacion
-        fields = ['cliente', 'moneda', 'descuento', 'detalles']
+        fields = ['id', 'cliente', 'moneda', 'descuento', 'cotizacion']
+
+class CotizacionesWithDetailsSerializer(CotizacionesWithDetailsListadoSerializer):
+    cotizacion = CotizacionDetailSerializer(many=True)
