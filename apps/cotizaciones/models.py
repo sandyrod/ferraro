@@ -26,7 +26,7 @@ class Cotizacion(models.Model):
         return f'{self.cliente}'
 
 class CotizacionDetail(models.Model):
-    cotizacion_id = models.BigIntegerField('Id de la cotizacion', null=True, blank=True)
+    cotizacion_id = models.ForeignKey(Cotizacion, null=True, blank=True, on_delete=models.CASCADE)
     producto = models.BigIntegerField('producto', null=True, blank=True)
     medida = models.FloatField('medida', null=True, blank=True)
     cantidad = models.BigIntegerField('cantidad', null=True, blank=True)
