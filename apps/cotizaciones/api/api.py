@@ -2,14 +2,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt import views as jwt_views
 from apps.cotizaciones.models import Cotizacion, CotizacionDetail
-from apps.cotizaciones.api.serializers import CotizacionSerializer, CotizacionDetailSerializer
+from apps.cotizaciones.api.serializers import CotizacionSerializer, CotizacionDetailSerializer, CotizacionesWithDetailsSerializer
 from rest_framework.permissions import IsAuthenticated
 
 class CotizacionAPIView(APIView):
     #permission_classes = [IsAuthenticated]
     def get(self, request):
         cotizaciones = Cotizacion.objects.all()
-        cotizaciones_serializer = CotizacionSerializer(cotizaciones, many = True)
+        cotizaciones_serializer = CotizacionesWithDetailsSerializer(cotizaciones, many = True)
         return Response(cotizaciones_serializer.data)
 
     def post(self, request):

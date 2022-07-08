@@ -6,7 +6,7 @@ from apps.orders.api.serializers import OrderSerializer, OtiSerializer, OrderSer
 from rest_framework.permissions import IsAuthenticated
 
 class OrderAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request):
         orders = Order.objects.all()
         orders_serializer = OrderSerializerRel(orders, many = True)
@@ -20,7 +20,7 @@ class OrderAPIView(APIView):
         return Response(orders_serializer.errors, status=400)
 
 class OrderDetailAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         order = Order.objects.filter(id = pk).first()
         order_serializer = OrderSerializer(order)
@@ -40,14 +40,14 @@ class OrderDetailAPIView(APIView):
         return Response("Eliminado")
 
 class OrderListsAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk):
         orders = Order.objects.filter(production_id = pk).all()
         orders_serializer = OrderSerializer(orders, many = True)
         return Response(orders_serializer.data)
 
 class OtiHistoryAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk):
         otihistory = Otihistory.objects.filter(oti_id = pk).all()
         otihistory_serializer = OtiSerializer(otihistory, many=True)
@@ -61,7 +61,7 @@ class OtiHistoryAPIView(APIView):
         return Response(oti_serializer.errors, status=400)
 
 class OrderByUserAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     def get(self, request, pk):
         orders = Order.objects.filter(current_operator = pk).all()
         orders_serializer = OrderSerializer(orders, many = True)

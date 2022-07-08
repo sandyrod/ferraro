@@ -22,7 +22,8 @@ class CotizacionDetailSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CotizacionesWithDetailsSerializer(serializers.ModelSerializer):
-    detalles = CotizacionDetailSerializer(many = True, source = 'cotizacion_id')
+    detalles = CotizacionDetailSerializer(many=True, source="cotizacion")
+
     class Meta:
         model = Cotizacion
-        field='__all__'
+        fields = ['cliente', 'moneda', 'descuento', 'detalles']
